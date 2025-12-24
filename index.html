@@ -353,28 +353,3 @@ img,iframe,video{max-width:100%;height:auto}
   <script src="js/main.js"></script>
 </body>
 </html>
-<main class="js">
-// Small UI behaviors for Bassline Customs starter site
-document.addEventListener('DOMContentLoaded',function(){
-  const yearEl=document.getElementById('year');
-  if(yearEl) yearEl.textContent=new Date().getFullYear();
-
-  const form=document.getElementById('contactForm');
-  if(form){
-    form.addEventListener('submit',function(e){
-      e.preventDefault();
-      const name=document.getElementById('name').value.trim();
-      const email=document.getElementById('email').value.trim();
-      const vehicle=document.getElementById('vehicle').value.trim();
-      const message=document.getElementById('message').value.trim();
-      if(!name||!email){
-        alert('Please provide your name and email.');
-        return;
-      }
-      const subject=encodeURIComponent('Installation inquiry from '+name);
-      const body=encodeURIComponent(`Name: ${name}%0AEmail: ${email}%0AVehicle: ${vehicle}%0A%0A${message}`);
-      window.location.href=`mailto:info@basslinecustoms.com?subject=${subject}&body=${body}`;
-    })
-  }
-})
-</main> 
