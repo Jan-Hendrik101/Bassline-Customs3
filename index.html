@@ -361,4 +361,153 @@ img,iframe,video{max-width:100%;height:auto}
 
 </script>
 </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Friendly Website</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: #222;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 1.2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 0.9rem;
+        }
+
+        /* Main content */
+        .container {
+            padding: 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .cards {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            flex: 1 1 300px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        /* Mobile menu */
+        .menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                flex-direction: column;
+                background: #333;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+            }
+
+            nav a {
+                padding: 15px;
+                border-top: 1px solid #444;
+            }
+
+            nav.show {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>My Website</h1>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <nav id="menu">
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h2>Welcome</h2>
+    <p>This website automatically adjusts for mobile, tablet, and desktop screens.</p>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Service 1</h3>
+            <p>Description of service.</p>
+        </div>
+        <div class="card">
+            <h3>Service 2</h3>
+            <p>Description of service.</p>
+        </div>
+        <div class="card">
+            <h3>Service 3</h3>
+            <p>Description of service.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    © 2025 My Website
+</footer>
+
+<script>
+    function toggleMenu() {
+        document.getElementById("menu").classList.toggle("show");
+    }
+</script>
+
+</body>
 </html>
